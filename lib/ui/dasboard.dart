@@ -1,4 +1,6 @@
+import 'package:abon/bloc/logout_block.dart';
 import 'package:abon/ui/jadwal_page.dart';
+import 'package:abon/ui/login_page.dart';
 import 'package:flutter/material.dart';
 
 class Dasboard extends StatefulWidget {
@@ -44,10 +46,12 @@ class _DasboardState extends State<Dasboard> {
                 title: const Text('Logout'),
                 trailing: const Icon(Icons.logout),
                 onTap: () async {
-                  // await LogoutBloc.logout().then((value) => {
-                  //       Navigator.pushReplacement(context,
-                  //           MaterialPageRoute(builder: (context) => LoginPage()))
-                  //     });
+                  await LogoutBloc.logout().then((value) => {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()))
+                      });
                 },
               )
             ],

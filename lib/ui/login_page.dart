@@ -1,9 +1,8 @@
+import 'package:abon/bloc/login_block.dart';
+import 'package:abon/helpers/user_info.dart';
+import 'package:abon/ui/dasboard.dart';
 import 'package:flutter/material.dart';
-// import 'package:AB_ON/bloc/login_bloc.dart';
-// import 'package:toko_kita/helpers/user_info.dart';
-// import 'package:toko_kita/ui/produk_page.dart';
-// import 'package:toko_kita/ui/registrasi_page.dart';
-// import 'package:toko_kita/widget/warning_dialog.dart';
+import 'package:abon/widget/warning_dialog.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -38,7 +37,6 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 30,
                   ),
-                  // _menuRegistrasi()
                 ],
               )),
         ),
@@ -78,10 +76,11 @@ class _LoginPageState extends State<LoginPage> {
       obscureText: true,
       controller: _passwordTextboxController,
       validator: (value) {
-        // jika karakter yang dimasukan kurang dari 6
+        // jika kosong
         if (value!.isEmpty) {
           return 'Password harus diisi';
         } else {
+          // jika karakter yang dimasukan kurang dari 5
           if (value.length < 5) {
             return 'Password kurang dari 5 karakter';
           }
@@ -110,41 +109,25 @@ class _LoginPageState extends State<LoginPage> {
       _isLoading = true;
     });
 
-    //   LoginBloc.login(
-    //           email: _emailTextboxController.text,
-    //           password: _passwordTextboxController.text)
-    //       .then((value) async {
-    //     await UserInfo().setToken(value.token.toString());
-    //     await UserInfo().setUserID(int.parse(value.userId.toString()));
-    //     Navigator.pushReplacement(
-    //         context, MaterialPageRoute(builder: (context) => const ProdukPage()));
-    //   }, onError: (error) {
-    //     print(error);
-    //     showDialog(
-    //         context: context,
-    //         barrierDismissible: false,
-    //         builder: (BuildContext context) => const WarningDialog(
-    //               description: "Login gagal, Silahkan coba lagi",
-    //             ));
-    //   });
-    //   setState(() {
-    //     _isLoading = false;
-    //   });
-    // }
-
-    // // Membuat menu untuk membuka halaman registrasi
-    // Widget _menuRegistrasi() {
-    //   return Center(
-    //     child: InkWell(
-    //       child: const Text(
-    //         'Registrasi',
-    //         style: TextStyle(color: Colors.blue),
-    //       ),
-    //       onTap: () {
-    //         Navigator.push(context,
-    //             MaterialPageRoute(builder: (context) => const RegistrasiPage()));
-    //       },
-    //     ),
-    //   );
+    LoginBloc.login(
+            email: _emailTextboxController.text,
+            password: _passwordTextboxController.text)
+        .then((value) async {
+      await UserInfo().setToken(value.token.toString());
+      await UserInfo().setUserID(int.parse(value.userId.toString()));
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const Dasboard()));
+    }, onError: (error) {
+      print(error);
+      showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext context) => const WarningDialog(
+                description: "Login gagal, Silahkan coba lagi",
+              ));
+    });
+    setState(() {
+      _isLoading = false;
+    });
   }
 }
