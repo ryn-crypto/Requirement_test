@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.abon">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+   
    <application
         android:label="abon"
         android:name="${applicationName}"
