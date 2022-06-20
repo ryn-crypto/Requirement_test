@@ -2,6 +2,7 @@ import 'package:abon/ui/dasboard.dart';
 import 'package:flutter/material.dart';
 
 class JadwalPage extends StatefulWidget {
+  
   const JadwalPage({Key? key}) : super(key: key);
 
   @override
@@ -14,41 +15,6 @@ class _JadwalPageState extends State<JadwalPage> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Jadwal kerja'),
-          actions: [
-            Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: GestureDetector(
-                  child: const Icon(Icons.search, size: 26.0),
-                  onTap: () async {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => ProdukForm()));
-                  },
-                ))
-          ],
-        ),
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              ListTile(
-                title: const Text('Dasboard'),
-                trailing: const Icon(Icons.home),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Dasboard()));
-                },
-              ),
-              ListTile(
-                title: const Text('Logout'),
-                trailing: const Icon(Icons.logout),
-                onTap: () async {
-                  // await LogoutBloc.logout().then((value) => {
-                  //       Navigator.pushReplacement(context,
-                  //           MaterialPageRoute(builder: (context) => LoginPage()))
-                  //     });
-                },
-              )
-            ],
-          ),
         ),
         body: ItemJadwal());
   }

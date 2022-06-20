@@ -3,18 +3,27 @@ import 'package:flutter/foundation.dart';
 class Login {
   int? code;
   bool? status;
-  String? token;
   int? userId;
   String? userEmail;
+  String? userNama;
+  String? userImg;
 
-  Login({this.code, this.status, this.token, this.userId, this.userEmail});
+  Login(
+      {this.code,
+      this.status,
+      this.userId,
+      this.userEmail,
+      this.userNama,
+      this.userImg});
 
   factory Login.formJson(Map<String, dynamic> obj) {
     return Login(
-        code: obj['code'],
-        status: obj['status'],
-        token: obj['data']['token'],
-        userId: obj['data']['user']['id'],
-        userEmail: obj['data']['user']['email']);
+      code: obj['code'],
+      status: obj['status'],
+      userId: obj['data']['User']['id'],
+      userEmail: obj['data']['User']['email'],
+      userNama: obj['data']['User']['nama'],
+      userImg: obj['data']['User']['gambar'],
+    );
   }
 }

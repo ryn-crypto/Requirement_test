@@ -113,10 +113,11 @@ class _LoginPageState extends State<LoginPage> {
             email: _emailTextboxController.text,
             password: _passwordTextboxController.text)
         .then((value) async {
-      await UserInfo().setToken(value.token.toString());
       await UserInfo().setUserID(int.parse(value.userId.toString()));
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const Dasboard()));
+          context,
+          MaterialPageRoute(
+              builder: (context) => Dasboard(value.userNama, value.userImg)));
     }, onError: (error) {
       print(error);
       showDialog(

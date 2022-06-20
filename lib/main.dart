@@ -1,8 +1,6 @@
-import 'package:abon/ui/dasboard.dart';
-import 'package:abon/ui/jadwal_page.dart';
+import 'package:abon/ui/login_page.dart';
 import 'package:abon/ui/scanner_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const Dasboard(), //MyHomePage(title: 'Buat test dulu'),
+      home: const LoginPage(), //MyHomePage(title: 'Buat test dulu'),
     );
   }
 }
