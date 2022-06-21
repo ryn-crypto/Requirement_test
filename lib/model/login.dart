@@ -6,6 +6,7 @@ class Login {
   int? userId;
   String? userEmail;
   String? userNama;
+  String? nik;
   String? userImg;
 
   Login(
@@ -14,6 +15,7 @@ class Login {
       this.userId,
       this.userEmail,
       this.userNama,
+      this.nik,
       this.userImg});
 
   factory Login.formJson(Map<String, dynamic> obj) {
@@ -23,6 +25,7 @@ class Login {
       userId: obj['data']['User']['id'],
       userEmail: obj['data']['User']['email'],
       userNama: obj['data']['User']['nama'],
+      nik: obj['data']['User']['nik'],
       userImg: obj['data']['User']['gambar'],
     );
   }

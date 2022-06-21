@@ -117,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-              builder: (context) => Dasboard(value.userNama, value.userImg)));
+              builder: (context) => Dasboard(value.userNama, value.userImg, value.nik)));
     }, onError: (error) {
       print(error);
       showDialog(

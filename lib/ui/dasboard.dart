@@ -1,7 +1,4 @@
 import 'package:abon/bloc/logout_block.dart';
-import 'package:abon/helpers/api.dart';
-import 'package:abon/helpers/user_info.dart';
-import 'package:abon/model/login.dart';
 import 'package:abon/ui/jadwal_page.dart';
 import 'package:abon/ui/login_page.dart';
 import 'package:abon/ui/scanner_page.dart';
@@ -10,16 +7,15 @@ import 'package:flutter/material.dart';
 class Dasboard extends StatefulWidget {
   String? nama;
   String? img;
+  String? nik;
 
-  Dasboard(this.nama, this.img, {Key? key}) : super(key: key);
+  Dasboard(this.nama, this.img, this.nik, {Key? key}) : super(key: key);
 
   @override
   _DasboardState createState() => _DasboardState();
 }
 
 class _DasboardState extends State<Dasboard> {
-  get data => Login;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -218,37 +214,5 @@ class _DasboardState extends State<Dasboard> {
                         ),
                       ],
                     )))));
-  }
-}
-
-class DataUser extends StatelessWidget {
-  final Login data;
-
-  const DataUser({Key? key, required this.data}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(15, 15, 15, 50),
-        child: Container(
-            width: 185,
-            child: Column(
-              children: [
-                CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
-                  radius: 70,
-                ),
-                Text(
-                  data.userNama.toString(),
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
-                )
-              ],
-            )),
-      ),
-      elevation: 0,
-    );
   }
 }
