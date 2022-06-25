@@ -121,8 +121,8 @@ class ItemJadwal extends StatelessWidget {
             cells: <DataCell>[
               DataCell(Text("11")),
               DataCell(Text("11/06/2022")),
-              DataCell(Text("libur")),
-              DataCell(Text("libur")),
+              DataCell(Text("09:00")),
+              DataCell(Text("18:00")),
             ],
           ),
           DataRow(

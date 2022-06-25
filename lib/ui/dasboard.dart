@@ -108,7 +108,7 @@ class _DasboardState extends State<Dasboard> {
                                         ),
                                         SizedBox(width: 10),
                                         Text(
-                                          'Hari ini anda masuk Shift 1',
+                                          'Hari ini anda masuk Shift 2',
                                           style: TextStyle(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w400),
