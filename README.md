@@ -1,16 +1,11 @@
-# abon
+# aplikasi mobile Ab-On
 
-A new Flutter project.
+Repo ini terintergrasi dengan beberapa aplikasi lain yang bisa di download di :
 
-## Getting Started
+1. Web aplication (https://github.com/ryn-crypto/rest-client_AbOn)
+2. rest-server untuk mobile app (https://github.com/ryn-crypto/api-AbOn)
+3. mobile apps (https://github.com/ryn-crypto/Ab-ON_Mobile_Apps)
 
-This project is a starting point for a Flutter application.
+## Official Documentation
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+setting rest-server terlebih dahulu
