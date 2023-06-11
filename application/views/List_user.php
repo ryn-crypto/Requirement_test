@@ -59,7 +59,7 @@
         <div class="navbar-collapse collapse">
           <ul class="navbar-nav navbar-align">
             <a class="nav-link d-none d-sm-inline-block" href="<?= base_url('Dasboard') ?>">
-              <img src="<?= base_url('assets/img/profile_pictures/default.png') ?>" class="avatar img-fluid rounded me-1" alt="Profile Pict" /> <span class="text-dark"><?= $user['name'] ?></span>
+              <img src="<?= base_url('assets/img/profile_pictures/') . $user['picture'] ?>" class="avatar img-fluid rounded me-1" alt="Profile Pict" /> <span class="text-dark"><?= $user['name'] ?></span>
             </a>
           </ul>
         </div>
