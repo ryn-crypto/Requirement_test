@@ -74,6 +74,26 @@ class Auth extends CI_Controller
 				'hintspassword' => substr($this->input->post('password'), -3)
 			];
 
+			// cek pictures want to upload
+			$upload_image = $_FILES['picture']['name'];
+
+			if ($upload_image) {
+				// config picture where allow to upload
+				$config['allowed_types'] = 'gif|jpg|png';
+				$config['max_size']     = '2048';
+				$config['upload_path'] = './assets/img/profile_pictures';
+
+				$this->load->library('upload', $config);
+
+				if ($this->upload->do_upload('picture')) {
+					// upload picture to path
+					$data['picture'] = $this->upload->data('file_name');
+				} else {
+					// if error'
+					echo $this->upload->display_errors();
+				}
+			}
+
 			// insert data with model user
 			$this->User->registration($data);
 

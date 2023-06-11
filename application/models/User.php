@@ -6,7 +6,7 @@ class User extends CI_Model
 
   public function index()
   {
-    $this->db->select();
+    $this->db->select('*');
     $this->db->from('user');
     return $this->db->get()->result_array();
   }
