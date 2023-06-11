@@ -17,7 +17,7 @@
                   </div>
                   <h5 class="fw-light mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
-                  <form action="<?= base_url('auth/login') ?>" method="post">
+                  <form action="<?= base_url('auth') ?>" method="post">
                     <div class="form-outline mb-4">
                       <label class="form-label" for="email">Email address</label>
                       <input type="email" id="email" name="email" class="form-control form-control-lg" required />

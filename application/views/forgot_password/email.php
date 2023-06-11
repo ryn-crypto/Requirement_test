@@ -31,7 +31,7 @@
                     <?= form_error('newPassword', '<small class="text-danger pl-1">', '</small>') ?>
                   </div>
 
-                  <p class="mt-4 pb-lg-2" style="color: #393f81;">Back to <a href="<?= base_url('auth/login') ?>" style="color: #393f81;">Login</a></p>
+                  <p class="mt-4 pb-lg-2" style="color: #393f81;">Back to <a href="<?= base_url('auth') ?>" style="color: #393f81;">Login</a></p>
                 </div>
               </div>
             </div>

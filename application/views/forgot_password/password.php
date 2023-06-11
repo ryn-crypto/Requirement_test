@@ -41,7 +41,7 @@
                       <button class="btn btn-dark btn-lg btn-block" type="submit">Change Password</button>
                     </div>
                   </form>
-                  <p class="mt-4 pb-lg-2" style="color: #393f81;">Back to <a href="<?= base_url('auth/login') ?>" style="color: #393f81;">Login</a></p>
+                  <p class="mt-4 pb-lg-2" style="color: #393f81;">Back to <a href="<?= base_url('Auth') ?>" style="color: #393f81;">Login</a></p>
 
                   <h5 class="fw-light mb-2 pb-3 fst-italic">** fill in the old password as true possible with the existing hints</h5>
                 </div>

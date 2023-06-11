@@ -61,7 +61,7 @@
                       <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                     </div>
                   </form>
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Have an account <a href="<?= base_url('auth/login') ?>" style="color: #393f81;">Login</a></p>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Have an account <a href="<?= base_url('auth') ?>" style="color: #393f81;">Login</a></p>
                 </div>
               </div>
             </div>

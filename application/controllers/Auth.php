@@ -12,17 +12,6 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
-		cek_login();
-
-		$data['page'] = 'Home';
-
-		$this->load->view('templates/header', $data);
-		$this->load->view('Home');
-		$this->load->view('templates/footer');
-	}
-
-	public function login()
-	{
 		$this->_ceksession();
 		// validation form
 		$this->form_validation->set_rules(
@@ -39,6 +28,7 @@ class Auth extends CI_Controller
 		// cek validation
 		if ($this->form_validation->run() == false) {
 
+			// data title page
 			$data['page'] = 'Login Page';
 
 			$this->load->view('templates/header', $data);
@@ -90,7 +80,7 @@ class Auth extends CI_Controller
 			// set flash data and redirect
 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
 			your account has been registered. please login</div>');
-			redirect('auth/login');
+			redirect('auth');
 		}
 	}
 
@@ -172,7 +162,7 @@ class Auth extends CI_Controller
 
 				// set flash data and redirect to login
 				$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Password has been changed, please login!</div>');
-				redirect('auth/login');
+				redirect('auth');
 			}
 		}
 	}
@@ -182,7 +172,7 @@ class Auth extends CI_Controller
 		$this->session->unset_userdata('email');
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have logged out!</div>');
-		redirect('auth/login');
+		redirect('auth');
 	}
 
 	// private function login
@@ -207,11 +197,11 @@ class Auth extends CI_Controller
 
 				$this->session->set_userdata($data);
 
-				redirect('Auth');
+				redirect('Dasboard');
 			} else {
 				// if password dosn't macth
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong Password !</div>');
-				redirect('auth/login');
+				redirect('auth');
 			}
 		} else {
 			// if unregistered
@@ -223,7 +213,7 @@ class Auth extends CI_Controller
 	private function _ceksession()
 	{
 		if ($this->session->userdata('email')) {
-			redirect('Auth');
+			redirect('Dasboard');
 		}
 	}
 }
